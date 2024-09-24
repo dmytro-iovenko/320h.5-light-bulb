@@ -7,13 +7,16 @@ import { useState } from "react";
 function App() {
   const [isBulbLit, setIsBulbLit] = useState(true);
 
-  const toggleSwitch = (e) => {
+  const toggleSwitch = () => {
     setIsBulbLit((status) => !status);
   };
 
+  const backgroundColor = isBulbLit ? "white" : "black";
+  const color = isBulbLit ? "black" : "white";
+
   return (
-    <div>
-      <h1>This room is {isBulbLit ? "LIT" : "UnLIT"}</h1>
+    <div style={{ backgroundColor, color }}>
+      <h1>This room is {isBulbLit ? "LIT" : "DARK"}</h1>
       <img src={isBulbLit ? bulbOn : bulbOff} alt="light bulb" />
       <div className={isBulbLit ? "switch" : "switch dark"} onClick={toggleSwitch}>
         <div className="switch-button"></div>
