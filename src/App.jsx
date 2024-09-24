@@ -1,5 +1,6 @@
 import bulbOn from "./assets/bulb-on.png";
 import bulbOff from "./assets/bulb-off.png";
+import lightSwitchSound from "./assets/light-switch-sound.mp3";
 
 import "./App.css";
 import { useState } from "react";
@@ -8,6 +9,7 @@ function App() {
   const [isBulbLit, setIsBulbLit] = useState(true);
 
   const toggleSwitch = () => {
+    new Audio(lightSwitchSound).play();
     setIsBulbLit((status) => !status);
   };
 
