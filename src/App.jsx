@@ -35,7 +35,7 @@ function App() {
         <input id="brightness" type="range" min="0" max="100" value={brightness} onChange={handleBrightnessChange} />
       </div>
       <div className={isBulbLit ? "switch" : "switch dark"} onClick={toggleSwitch}>
-        <div className="switch-button"></div>
+        <div className={isBulbLit ? "switch-button" : "switch-button dark"}></div>
       </div>
     </div>
   );
