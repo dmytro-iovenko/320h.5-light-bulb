@@ -26,13 +26,13 @@ function App() {
       style={{
         backgroundColor,
         color,
-        filter: `brightness(${brightness}%)`,
+        filter: isBulbLit ? `brightness(${brightness}%)` : '',
       }}>
       <h1>This room is {isBulbLit ? "LIT" : "DARK"}</h1>
       <img src={isBulbLit ? bulbOn : bulbOff} alt="light bulb" />
       <div style={{ height: "auto" }}>
         <label htmlFor="brightness">Brightness: {brightness}%</label>
-        <input id="brightness" type="range" min="0" max="100" value={brightness} onChange={handleBrightnessChange} />
+        <input id="brightness" type="range" min="0" max="100" value={brightness} onChange={handleBrightnessChange} disabled={!isBulbLit}/>
       </div>
       <div className={isBulbLit ? "switch" : "switch dark"} onClick={toggleSwitch}>
         <div className={isBulbLit ? "switch-button" : "switch-button dark"}></div>
